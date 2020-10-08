@@ -88,7 +88,11 @@ class Car {
 
 Car.prototype.drive = function (distance) {
   this.odometer = this.odometer + distance;
-  return (this.tank = this.tank - distance / milesPerGallon);
+  if (distance === (this. tank * this.milesPerGallon) ) {
+  return (this.tank = this.tank - distance);
+  } else {
+    return this.tank * this.milesPerGallon - distance;
+  }
   };
 
 Car.prototype.fill = function (gallons) {
